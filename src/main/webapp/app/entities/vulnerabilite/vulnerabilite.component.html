@@ -1,0 +1,88 @@
+<div>
+    <h2 id="page-heading">
+        <span>Vulnerabilites</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-vulnerabilite" [routerLink]="['/vulnerabilite/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Vulnerabilite
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="vulnerabilites">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Ref</span></th>
+            <th><span>Categorie</span></th>
+            <th><span>Nom</span></th>
+            <th><span>Description</span></th>
+            <th><span>Probabilite</span></th>
+            <th><span>Impact</span></th>
+            <th><span>Criticite</span></th>
+            <th><span>Cvss</span></th>
+            <th><span>Recommandation</span></th>
+            <th><span>Projet</span></th>
+            <th><span>Privileges Necessaires</span></th>
+            <th><span>Composant Impacte</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let vulnerabilite of vulnerabilites ;trackBy: trackId">
+                <td><a [routerLink]="['/vulnerabilite', vulnerabilite.id, 'view' ]">{{vulnerabilite.id}}</a></td>
+                <td>{{vulnerabilite.ref}}</td>
+                <td>{{vulnerabilite.categorie}}</td>
+                <td>{{vulnerabilite.nom}}</td>
+                <td>{{vulnerabilite.description}}</td>
+                <td>{{vulnerabilite.probabilite}}</td>
+                <td>{{vulnerabilite.impact}}</td>
+                <td>{{vulnerabilite.criticite}}</td>
+                <td>{{vulnerabilite.cvss}}</td>
+                <td>{{vulnerabilite.recommandation}}</td>
+                <td>
+                    <div *ngIf="vulnerabilite.projet">
+                        <a [routerLink]="['../projet', vulnerabilite.projet?.id, 'view' ]" >{{vulnerabilite.projet?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="vulnerabilite.privilegesNecessaires">
+                        <a [routerLink]="['../privileges-necessaires', vulnerabilite.privilegesNecessaires?.id, 'view' ]" >{{vulnerabilite.privilegesNecessaires?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="vulnerabilite.composantImpacte">
+                        <a [routerLink]="['../composant-impacte', vulnerabilite.composantImpacte?.id, 'view' ]" >{{vulnerabilite.composantImpacte?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/vulnerabilite', vulnerabilite.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/vulnerabilite', vulnerabilite.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'vulnerabilite/'+ vulnerabilite.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+{
+    "name": "Vulnerabilite",
+    "fields": [
+        {
+            "fieldName": "ref",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "categorie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "probabilite",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "impact",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "criticite",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cvss",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "recommandation",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "projet",
+            "otherEntityName": "projet",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "privilegesNecessaires",
+            "otherEntityName": "privilegesNecessaires",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "composantImpacte",
+            "otherEntityName": "composantImpacte",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190110135827",
+    "entityTableName": "vulnerabilite",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

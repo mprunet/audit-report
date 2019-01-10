@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-projet-heading">Create or edit a Projet</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!projet.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="projet.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_basicat">Basicat</label>
+                    <input type="text" class="form-control" name="basicat" id="field_basicat"
+                        [(ngModel)]="projet.basicat" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orangeCarto">Orange Carto</label>
+                    <input type="text" class="form-control" name="orangeCarto" id="field_orangeCarto"
+                        [(ngModel)]="projet.orangeCarto" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_periscope">Periscope</label>
+                    <input type="text" class="form-control" name="periscope" id="field_periscope"
+                        [(ngModel)]="projet.periscope" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_version">Version</label>
+                    <input type="text" class="form-control" name="version" id="field_version"
+                        [(ngModel)]="projet.version" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                        [(ngModel)]="projet.nom" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_moe">Moe</label>
+                    <input type="text" class="form-control" name="moe" id="field_moe"
+                        [(ngModel)]="projet.moe" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cdp">Cdp</label>
+                    <input type="text" class="form-control" name="cdp" id="field_cdp"
+                        [(ngModel)]="projet.cdp" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rssi">Rssi</label>
+                    <input type="text" class="form-control" name="rssi" id="field_rssi"
+                        [(ngModel)]="projet.rssi" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cssi">Cssi</label>
+                    <input type="text" class="form-control" name="cssi" id="field_cssi"
+                        [(ngModel)]="projet.cssi" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ds">Ds</label>
+                    <input type="text" class="form-control" name="ds" id="field_ds"
+                        [(ngModel)]="projet.ds" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dp">Dp</label>
+                    <input type="text" class="form-control" name="dp" id="field_dp"
+                        [(ngModel)]="projet.dp" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typeAudit">Type Audit</label>
+                    <input type="text" class="form-control" name="typeAudit" id="field_typeAudit"
+                        [(ngModel)]="projet.typeAudit" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_entrepriseAuditeur">Entreprise Auditeur</label>
+                    <input type="text" class="form-control" name="entrepriseAuditeur" id="field_entrepriseAuditeur"
+                        [(ngModel)]="projet.entrepriseAuditeur" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateRestitution">Date Restitution</label>
+                    <div class="input-group">
+                        <input id="field_dateRestitution" type="text" class="form-control" name="dateRestitution" ngbDatepicker  #dateRestitutionDp="ngbDatepicker" [(ngModel)]="projet.dateRestitution"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateRestitutionDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

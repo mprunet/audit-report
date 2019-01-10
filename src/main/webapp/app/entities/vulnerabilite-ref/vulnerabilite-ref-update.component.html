@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-vulnerabilite-ref-heading">Create or edit a Vulnerabilite Ref</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!vulnerabiliteRef.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="vulnerabiliteRef.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                        [(ngModel)]="vulnerabiliteRef.nom" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="vulnerabiliteRef.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_probabilite">Probabilite</label>
+                    <input type="number" class="form-control" name="probabilite" id="field_probabilite"
+                        [(ngModel)]="vulnerabiliteRef.probabilite" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_impact">Impact</label>
+                    <input type="number" class="form-control" name="impact" id="field_impact"
+                        [(ngModel)]="vulnerabiliteRef.impact" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_criticite">Criticite</label>
+                    <input type="text" class="form-control" name="criticite" id="field_criticite"
+                        [(ngModel)]="vulnerabiliteRef.criticite" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cvss">Cvss</label>
+                    <input type="number" class="form-control" name="cvss" id="field_cvss"
+                        [(ngModel)]="vulnerabiliteRef.cvss" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_recommandation">Recommandation</label>
+                    <input type="text" class="form-control" name="recommandation" id="field_recommandation"
+                        [(ngModel)]="vulnerabiliteRef.recommandation" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_vulnRef">Vuln Ref</label>
+                    <select class="form-control" id="field_vulnRef" name="vulnRef" [(ngModel)]="vulnerabiliteRef.vulnRef" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="vulnerabiliteOption.id === vulnerabiliteRef.vulnRef?.id ? vulnerabiliteRef.vulnRef : vulnerabiliteOption" *ngFor="let vulnerabiliteOption of vulnerabilites; trackBy: trackVulnerabiliteById">{{vulnerabiliteOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="vulnerabilite">
+            <h2><span>Vulnerabilite</span> {{vulnerabilite.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Ref</span></dt>
+                <dd>
+                    <span>{{vulnerabilite.ref}}</span>
+                </dd>
+                <dt><span>Categorie</span></dt>
+                <dd>
+                    <span>{{vulnerabilite.categorie}}</span>
+                </dd>
+                <dt><span>Nom</span></dt>
+                <dd>
+                    <span>{{vulnerabilite.nom}}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{vulnerabilite.description}}</span>
+                </dd>
+                <dt><span>Probabilite</span></dt>
+                <dd>
+                    <span>{{vulnerabilite.probabilite}}</span>
+                </dd>
+                <dt><span>Impact</span></dt>
+                <dd>
+                    <span>{{vulnerabilite.impact}}</span>
+                </dd>
+                <dt><span>Criticite</span></dt>
+                <dd>
+                    <span>{{vulnerabilite.criticite}}</span>
+                </dd>
+                <dt><span>Cvss</span></dt>
+                <dd>
+                    <span>{{vulnerabilite.cvss}}</span>
+                </dd>
+                <dt><span>Recommandation</span></dt>
+                <dd>
+                    <span>{{vulnerabilite.recommandation}}</span>
+                </dd>
+                <dt><span>Projet</span></dt>
+                <dd>
+                    <div *ngIf="vulnerabilite.projet">
+                        <a [routerLink]="['/projet', vulnerabilite.projet?.id, 'view']">{{vulnerabilite.projet?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Privileges Necessaires</span></dt>
+                <dd>
+                    <div *ngIf="vulnerabilite.privilegesNecessaires">
+                        <a [routerLink]="['/privileges-necessaires', vulnerabilite.privilegesNecessaires?.id, 'view']">{{vulnerabilite.privilegesNecessaires?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Composant Impacte</span></dt>
+                <dd>
+                    <div *ngIf="vulnerabilite.composantImpacte">
+                        <a [routerLink]="['/composant-impacte', vulnerabilite.composantImpacte?.id, 'view']">{{vulnerabilite.composantImpacte?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/vulnerabilite', vulnerabilite.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

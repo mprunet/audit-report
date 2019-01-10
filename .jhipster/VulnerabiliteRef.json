@@ -1,0 +1,50 @@
+{
+    "name": "VulnerabiliteRef",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "probabilite",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "impact",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "criticite",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cvss",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "recommandation",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "vulnRef",
+            "otherEntityName": "vulnerabilite",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190110135826",
+    "entityTableName": "vulnerabilite_ref",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

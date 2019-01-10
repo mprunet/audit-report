@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Vulnerabilite.
+    -->
+    <changeSet id="20190110135827-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="projet_id"
+                                 baseTableName="vulnerabilite"
+                                 constraintName="fk_vulnerabilite_projet_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="projet"/>
+
+        <addForeignKeyConstraint baseColumnNames="privileges_necessaires_id"
+                                 baseTableName="vulnerabilite"
+                                 constraintName="fk_vulnerabilite_privileges_necessaires_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="privileges_necessaires"/>
+
+        <addForeignKeyConstraint baseColumnNames="composant_impacte_id"
+                                 baseTableName="vulnerabilite"
+                                 constraintName="fk_vulnerabilite_composant_impacte_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="composant_impacte"/>
+
+    </changeSet>
+</databaseChangeLog>
