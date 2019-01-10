@@ -1,0 +1,39 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "AuditReport",
+    "packageName": "com.orange.secudtsi",
+    "packageFolder": "com/orange/secudtsi",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": false,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.7.2",
+    "jwtSecretKey": "OGM4NmVhMmZiNzdiOWFiYjE1ZGQwNDJiNmUyMGIxNTZhYmQ0NWFkM2MwYjU0NzFiNDI0YTJhNjM2NjJmYTNkYWU3NGQ4NWU0OTcwZjFiYjA5M2ZlNTcyN2I4NjZiMzkzNTY4OTlkMzkxYWFkZjc4ZWY4NjI2MjAyMzEzMTVkZGQ=",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "mprunet",
+  "repository-name": "audit-report"
+}
