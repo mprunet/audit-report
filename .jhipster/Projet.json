@@ -1,0 +1,71 @@
+{
+    "name": "Projet",
+    "fields": [
+        {
+            "fieldName": "basicat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orangeCarto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "periscope",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "moe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cdp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rssi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cssi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ds",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typeAudit",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "entrepriseAuditeur",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateRestitution",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190110135823",
+    "entityTableName": "projet",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

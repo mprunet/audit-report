@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="vulnerabiliteRef">
+            <h2><span>Vulnerabilite Ref</span> {{vulnerabiliteRef.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Nom</span></dt>
+                <dd>
+                    <span>{{vulnerabiliteRef.nom}}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{vulnerabiliteRef.description}}</span>
+                </dd>
+                <dt><span>Probabilite</span></dt>
+                <dd>
+                    <span>{{vulnerabiliteRef.probabilite}}</span>
+                </dd>
+                <dt><span>Impact</span></dt>
+                <dd>
+                    <span>{{vulnerabiliteRef.impact}}</span>
+                </dd>
+                <dt><span>Criticite</span></dt>
+                <dd>
+                    <span>{{vulnerabiliteRef.criticite}}</span>
+                </dd>
+                <dt><span>Cvss</span></dt>
+                <dd>
+                    <span>{{vulnerabiliteRef.cvss}}</span>
+                </dd>
+                <dt><span>Recommandation</span></dt>
+                <dd>
+                    <span>{{vulnerabiliteRef.recommandation}}</span>
+                </dd>
+                <dt><span>Vuln Ref</span></dt>
+                <dd>
+                    <div *ngIf="vulnerabiliteRef.vulnRef">
+                        <a [routerLink]="['/vulnerabilite', vulnerabiliteRef.vulnRef?.id, 'view']">{{vulnerabiliteRef.vulnRef?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/vulnerabilite-ref', vulnerabiliteRef.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

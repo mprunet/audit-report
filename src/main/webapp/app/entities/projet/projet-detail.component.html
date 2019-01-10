@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="projet">
+            <h2><span>Projet</span> {{projet.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Basicat</span></dt>
+                <dd>
+                    <span>{{projet.basicat}}</span>
+                </dd>
+                <dt><span>Orange Carto</span></dt>
+                <dd>
+                    <span>{{projet.orangeCarto}}</span>
+                </dd>
+                <dt><span>Periscope</span></dt>
+                <dd>
+                    <span>{{projet.periscope}}</span>
+                </dd>
+                <dt><span>Version</span></dt>
+                <dd>
+                    <span>{{projet.version}}</span>
+                </dd>
+                <dt><span>Nom</span></dt>
+                <dd>
+                    <span>{{projet.nom}}</span>
+                </dd>
+                <dt><span>Moe</span></dt>
+                <dd>
+                    <span>{{projet.moe}}</span>
+                </dd>
+                <dt><span>Cdp</span></dt>
+                <dd>
+                    <span>{{projet.cdp}}</span>
+                </dd>
+                <dt><span>Rssi</span></dt>
+                <dd>
+                    <span>{{projet.rssi}}</span>
+                </dd>
+                <dt><span>Cssi</span></dt>
+                <dd>
+                    <span>{{projet.cssi}}</span>
+                </dd>
+                <dt><span>Ds</span></dt>
+                <dd>
+                    <span>{{projet.ds}}</span>
+                </dd>
+                <dt><span>Dp</span></dt>
+                <dd>
+                    <span>{{projet.dp}}</span>
+                </dd>
+                <dt><span>Type Audit</span></dt>
+                <dd>
+                    <span>{{projet.typeAudit}}</span>
+                </dd>
+                <dt><span>Entreprise Auditeur</span></dt>
+                <dd>
+                    <span>{{projet.entrepriseAuditeur}}</span>
+                </dd>
+                <dt><span>Date Restitution</span></dt>
+                <dd>
+                    <span>{{projet.dateRestitution}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/projet', projet.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
