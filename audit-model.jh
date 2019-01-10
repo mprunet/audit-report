@@ -1,0 +1,63 @@
+entity Projet {
+	basicat String
+    orangeCarto String
+    periscope String
+    version String
+    nom String
+    moe String
+    cdp String
+    rssi String
+    cssi String
+    ds String
+    dp String
+    typeAudit String
+    entrepriseAuditeur String
+    dateRestitution LocalDate
+}
+
+entity PrivilegesNecessaires {
+	nom String
+    poids Float
+}
+
+entity ComposantImpacte {
+	nom String
+}
+
+entity VulnerabiliteRef {
+    nom String
+    description String
+    probabilite Float
+    impact Float
+    criticite String 
+    cvss Float
+    recommandation String
+}
+
+entity Vulnerabilite {
+	ref String
+    categorie String
+    nom String
+    description String
+    probabilite Float
+    impact Float
+    criticite String 
+    cvss Float
+    recommandation String
+}
+
+relationship ManyToOne {
+	VulnerabiliteRef{vulnRef} to Vulnerabilite
+}
+
+relationship ManyToOne {
+	Vulnerabilite{projet} to Projet
+}
+
+relationship ManyToOne {
+	Vulnerabilite{privilegesNecessaires} to PrivilegesNecessaires
+}
+
+relationship ManyToOne {
+	Vulnerabilite{composantImpacte} to ComposantImpacte
+}
