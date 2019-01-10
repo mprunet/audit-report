@@ -1,0 +1,100 @@
+entity TypeAudit {
+	name String
+}
+
+entity EntrepriseAudit {
+	name String
+}
+
+entity Periscope {
+    name String
+}
+
+entity ComposantImpacte {
+    name String
+}
+
+entity CvssTAAccess {
+	name String
+    note Float
+}
+
+entity Probability {
+	name String
+}
+
+entity VulnerabilityRef {
+	name String
+    parent VulnerabilityRef
+    probability Float
+    impact Float
+    
+}
+
+entity Project {
+	basicat String
+    orangeCarto Integer
+    periscope Periscope
+    version String
+    nom String
+    cdp String
+    rssi String
+    cssi String
+    ds String
+    dp String
+    typeAudit TypeAudit
+    entrepriseAudit EntrepriseAudit
+    auditeur String
+    restitution Date
+}
+
+entity Vulnerability {
+	project Project
+	ref String
+    cvssTAAccess CvssTAAccess
+    composantImpacte ComposantImpacte
+    vunerabilityType VulnerabilityRef
+    name String 
+    description String
+    probability Float
+    impact Float 
+    criticite Float
+    cvss Float
+    recommandation String
+}
+
+relationship ManyToOne {
+	Vulnerability{project} to Project
+}
+
+relationship ManyToOne {
+	Vulnerability{cvssTAAccess} to CvssTAAccess
+}
+
+relationship ManyToOne {
+	Vulnerability{composantImpacte} to ComposantImpacte
+}
+
+relationship ManyToOne {
+	Vulnerability{vunerabilityType} to VulnerabilityRef
+}
+
+relationship ManyToOne {
+	VulnerabilityRef{parent} to VulnerabilityRef
+}
+
+relationship ManyToOne {
+    Project{periscope} to Periscope
+}
+
+relationship ManyToOne {
+    Project{typeAudit} to TypeAudit
+}
+
+relationship ManyToOne {
+    Project{entrepriseAudit} to EntrepriseAudit
+}
+
+
+
+
